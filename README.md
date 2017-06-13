@@ -1,2 +1,7 @@
-# identidock
-オライリー Docker　第７章　自動化ビルドの練習用リポジトリ
+identidock
+
+==========
+
+Kevin Gaudin の monsterid を元にしたシンプルな identicon サーバー。
+
+Adrian Mouat著、オライリージャパンの「Using Docker」による。
