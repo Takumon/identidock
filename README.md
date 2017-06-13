@@ -1,6 +1,6 @@
 identidock
 
-==========
+=========
 
 Kevin Gaudin の monsterid を元にしたシンプルな identicon サーバー。
 
