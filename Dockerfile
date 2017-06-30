@@ -6,6 +6,8 @@ WORKDIR /app
 COPY app /app
 COPY cmd.sh /
 
+RUN chmod 777 /app/*
+RUN ls -l /app
 EXPOSE 9090 9191
 USER uwsgi
 CMD ["/cmd.sh"]
