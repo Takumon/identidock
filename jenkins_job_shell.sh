@@ -23,10 +23,10 @@ if [ $EPR -eq 0 ]; then
   if [ $CODE -eq 200 ]; then
     echo "テスト成功 - タグ付けします"
     HASH=$(git rev-parse --short HEAD)
-    sudo docker tag -f jenkins_identidock takumon/identidock:$HASH
-    sudo docker tag -f jenkins_identidock takumon/indentidock:newest
+    sudo docker tag jenkins_identidock takumon/identidock:$HASH
+    sudo docker tag jenkins_identidock takumon/indentidock:newest
     echo "プッシュします。"
-    sudo docker login "$1"
+    sudo docker login $1
     sudo docker push takumon/identidock:$HASH
     sudo docker push takumon/indentidock:newest
   else
