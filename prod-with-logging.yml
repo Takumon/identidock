@@ -23,6 +23,16 @@ dnmonster:
 redis:
   image: redis:3.0
 
+
+logstash:
+  image: logstash
+  volumes:
+    - ./logstash.conf:/etc/logstash.conf
+  environment:
+    LOGSPOUT: ignore
+  command: -f /etc/logstash.conf
+
+
 logspout:
   image: amouat/logspout-logstash:1.0
   volumes:
@@ -32,12 +42,3 @@ logspout:
   links:
     - logstash
   command: logstash://logstash:5000
-
-
-logstash:
-  image: logstash
-  volumes:
-    - ./logstash.conf:/etc/logstash.conf
-  environment:
-    LOGSPOUT: ignore
-  command: -f /etc/logstash.conf
